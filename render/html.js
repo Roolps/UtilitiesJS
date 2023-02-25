@@ -57,10 +57,6 @@ const structure = Object.freeze([
     }
 ])
 
-structure.forEach(elem => {
-  render($("body"), elem)
-})
-
 const render = (parent) => {
     return (child) => {
         // Creates initial elem
@@ -80,3 +76,8 @@ const render = (parent) => {
         })
     }
 }
+
+structure.forEach(elem => {
+    render($("body"))(elem);
+    console.log("hi");
+})
